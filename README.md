@@ -20,8 +20,8 @@ Vichintarka is a comprehensive examination platform that combines cutting-edge t
 
 ## 🏗️ Technical Stack
 
-- **Frontend**: React.js with TypeScript
-- **Backend**: Node.js/Express.js microservices
+- **Frontend**: Vue.js with Vuetify and Tailwind CSS
+- **Backend**: Python FASTAPI 
 - **Database**: PostgreSQL with Redis caching
 - **Infrastructure**: Docker containers on AWS/Azure
 - **Real-time**: WebSocket connections
