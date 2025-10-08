@@ -21,7 +21,7 @@ Vichintarka is a comprehensive examination platform that combines cutting-edge t
 ## 🏗️ Technical Stack
 
 - **Frontend**: Vue.js with Vuetify and Tailwind CSS
-- **Backend**: Python FASTAPI 
+- **Backend**: Python FASTAPI
 - **Database**: PostgreSQL with Redis caching
 - **Infrastructure**: Docker containers on AWS/Azure
 - **Real-time**: WebSocket connections
@@ -33,6 +33,6 @@ This project is proprietary software developed by Aakash Malik.
 
 ---
 
-**Author**: Aakash Malik  
-**Version**: 1.0  
+**Author**: Aakash Malik
+**Version**: 1.0
 **Last Updated**: October 6, 2025

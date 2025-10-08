@@ -1,7 +1,7 @@
 # 🧠 Vichintarka — Product & Technical PRD
 
-**Version:** 1.0  
-**Date:** 2025-10-06  
+**Version:** 1.0
+**Date:** 2025-10-06
 **Author:** Aakash Malik
 
 ---
@@ -68,16 +68,16 @@
 
 ### 1. Executive Summary
 
-Vichintarka is a **multi-tenant online exam preparation platform** designed to help students systematically practice, attempt, and analyze questions for competitive exams such as **JEE Main**, **JEE Advanced**, and **NEET**.  
+Vichintarka is a **multi-tenant online exam preparation platform** designed to help students systematically practice, attempt, and analyze questions for competitive exams such as **JEE Main**, **JEE Advanced**, and **NEET**.
 
 The platform emphasizes **reasoning**, **reflection**, and **analytical learning** by providing structured tests, per-question insights, and practice modules with discussion and reporting features.
 
-The initial release (MVP) targets **students only**, with support for multiple exam organizations as separate tenants.  
+The initial release (MVP) targets **students only**, with support for multiple exam organizations as separate tenants.
 
 Vichintarka integrates:
-- ✉️ Email verification  
-- 🔐 Google OAuth  
-- 🧭 Browser-based anti-cheat enforcement  
+- ✉️ Email verification
+- 🔐 Google OAuth
+- 🧭 Browser-based anti-cheat enforcement
 - 📝 PDF generation for tests and solutions
 
 ---
@@ -92,109 +92,109 @@ Vichintarka embodies the union of **Viveka (discernment)**, **Chintana (thought)
 
 ### 3. Core Concept & Differentiation
 
-- 🏢 **Multi-tenant structure** allows each exam or organization to manage independent question banks and tests.  
-- 📚 **Comprehensive question types**: MCQ (single/multiple), numerical, matching, matrix, image-based, passage-based with sub-questions.  
-- 📊 **Advanced analytics**: Per-question and per-student insights, topic-wise performance tracking.  
-- 🧠 **Practice and discussion**: Students can attempt questions outside tests, comment, and report issues.  
-- 📝 **PDF generation**: Question papers, answer keys, and solution sheets downloadable post-test.  
+- 🏢 **Multi-tenant structure** allows each exam or organization to manage independent question banks and tests.
+- 📚 **Comprehensive question types**: MCQ (single/multiple), numerical, matching, matrix, image-based, passage-based with sub-questions.
+- 📊 **Advanced analytics**: Per-question and per-student insights, topic-wise performance tracking.
+- 🧠 **Practice and discussion**: Students can attempt questions outside tests, comment, and report issues.
+- 📝 **PDF generation**: Question papers, answer keys, and solution sheets downloadable post-test.
 - 🔒 **Anti-cheat features**: Browser tab-switch detection and enforced full-screen mode during exams.
 
 ---
 
 ### 4. Market Context & Opportunity
 
-- Online exam prep in India is a growing multi-billion-dollar market, dominated by **Byju’s**, **Unacademy**, **Aakash**, etc.  
-- Students require platforms that combine adaptive practice with structured assessment.  
+- Online exam prep in India is a growing multi-billion-dollar market, dominated by **Byju’s**, **Unacademy**, **Aakash**, etc.
+- Students require platforms that combine adaptive practice with structured assessment.
 - Vichintarka differentiates by providing **exam-specific multi-tenancy**, **deep analytics**, and **structured content hierarchy** from day one.
 
 ---
 
 ### 5. Target Users & Personas
 
-**Primary Users:**  
+**Primary Users:**
 - Students (ages 16–22) preparing for competitive exams.
 
-**User Persona Example:**  
-- **Name:** Rohan Sharma  
-- **Age:** 18  
-- **Exam:** JEE Main  
+**User Persona Example:**
+- **Name:** Rohan Sharma
+- **Age:** 18
+- **Exam:** JEE Main
 - **Goals:** Maximize accuracy in practice tests, identify weak topics, download solutions for offline study.
 
 ---
 
 ### 6. Problem Statement
 
-Students lack integrated platforms that combine **practice**, **testing**, **analytics**, and **exam-specific content** in one place.  
+Students lack integrated platforms that combine **practice**, **testing**, **analytics**, and **exam-specific content** in one place.
 Current solutions either emphasize content consumption or live classes but do not provide **reflective insights post-attempt**.
 
 ---
 
 ### 7. Product Objectives
 
-- Deliver **multi-tenant exam-specific** question and test management.  
-- Provide **per-question and per-topic insights**.  
-- Ensure **secure, timed, and anti-cheat exam attempts**.  
+- Deliver **multi-tenant exam-specific** question and test management.
+- Provide **per-question and per-topic insights**.
+- Ensure **secure, timed, and anti-cheat exam attempts**.
 - Enable **offline study via PDFs**.
 
 ---
 
 ### 8. Guiding Principles
 
-- 🧭 **Student-first:** Minimal friction, intuitive UX.  
-- 📈 **Data-driven:** Insights should guide learning.  
-- 🧩 **Scalable & Modular:** Microservices architecture for future growth.  
+- 🧭 **Student-first:** Minimal friction, intuitive UX.
+- 📈 **Data-driven:** Insights should guide learning.
+- 🧩 **Scalable & Modular:** Microservices architecture for future growth.
 - 🔐 **Secure & Reliable:** Protect user data and exam integrity.
 
 ---
 
 ### 9. Product Scope & Non-scope
 
-**In-scope (MVP):**  
-- Multi-tenant exam management  
-- Student sign-up/login (email + Google OAuth)  
-- Pre-built timed tests with auto-grading  
-- Practice mode with discussion threads  
-- PDF generation for question papers & solutions  
+**In-scope (MVP):**
+- Multi-tenant exam management
+- Student sign-up/login (email + Google OAuth)
+- Pre-built timed tests with auto-grading
+- Practice mode with discussion threads
+- PDF generation for question papers & solutions
 - Per-question and per-topic analytics
 
-**Out-of-scope (v1):**  
-- AI-based recommendations  
-- Adaptive testing  
-- Mobile app (only responsive web)  
+**Out-of-scope (v1):**
+- AI-based recommendations
+- Adaptive testing
+- Mobile app (only responsive web)
 - Payment and subscription management
 
 ---
 
 ### 10. Core Features (Functional Requirements)
 
-**Authentication & Authorization**  
-- Email verification + Google OAuth  
-- JWT-based session management  
+**Authentication & Authorization**
+- Email verification + Google OAuth
+- JWT-based session management
 - Student-only role (v1)
 
-**Organization & Content Hierarchy**  
-- Organizations → Subjects → Topics → Questions  
+**Organization & Content Hierarchy**
+- Organizations → Subjects → Topics → Questions
 - Tagging: Subject, Topic, Difficulty, Bloom’s taxonomy
 
-**Question Bank**  
-- Multiple types (MCQ, numerical, matching, matrix, image, passage)  
-- LaTeX rendering  
-- Images for questions  
+**Question Bank**
+- Multiple types (MCQ, numerical, matching, matrix, image, passage)
+- LaTeX rendering
+- Images for questions
 - Versioned correct answers (visible post-test)
 
-**Tests & Attempts**  
-- Section-wise timing, negative marking, partial credits  
-- Client + server timer enforcement  
-- Auto-submit on time expiry or tab switch  
+**Tests & Attempts**
+- Section-wise timing, negative marking, partial credits
+- Client + server timer enforcement
+- Auto-submit on time expiry or tab switch
 - Downloadable PDFs
 
-**Practice Mode**  
-- Individual question practice  
+**Practice Mode**
+- Individual question practice
 - Commenting, upvotes, reporting
 
-**Analytics & Insights**  
-- Per-question, per-section, per-student  
-- Cohort benchmarking  
+**Analytics & Insights**
+- Per-question, per-section, per-student
+- Cohort benchmarking
 - Exportable as CSV/PDF
 
 ---
@@ -210,122 +210,122 @@ Current solutions either emphasize content consumption or live classes but do no
 
 ### 12. User Journey Flow
 
-1. Signup/Login → Dashboard → Select Organization  
-2. Practice Mode → Browse Topics → Attempt Questions → Comment/Report  
-3. Test Mode → Start Timed Test → Auto-Submission → Analytics  
+1. Signup/Login → Dashboard → Select Organization
+2. Practice Mode → Browse Topics → Attempt Questions → Comment/Report
+3. Test Mode → Start Timed Test → Auto-Submission → Analytics
 4. Download PDFs → Review Solutions → Repeat Practice
 
 ---
 
 ### 13. Platform Structure & Multi-tenancy
 
-- Each organization represents an exam (e.g., JEE Main, NEET).  
+- Each organization represents an exam (e.g., JEE Main, NEET).
 - Users are linked to organizations; each org has its own subjects, topics, questions, and tests.
 
 ---
 
 ### 14. Content Hierarchy & Taxonomy
 
-- Subjects → Topics → Subtopics → Questions  
-- Questions tagged by type, difficulty, topic, Bloom’s taxonomy  
+- Subjects → Topics → Subtopics → Questions
+- Questions tagged by type, difficulty, topic, Bloom’s taxonomy
 - Media support: Images (inline), LaTeX (math), PDF solutions
 
 ---
 
 ### 15. Exam Flow & Grading Rules
 
-- Section-wise timing  
-- Negative marking  
-- Partial credits  
-- Auto-grading for objective questions  
+- Section-wise timing
+- Negative marking
+- Partial credits
+- Auto-grading for objective questions
 - Browser lockdown for anti-cheat
 
 ---
 
 ### 16. Analytics & Insights Framework
 
-- Track accuracy per question, topic, and student  
-- Compute average time per question  
-- Identify weak areas  
+- Track accuracy per question, topic, and student
+- Compute average time per question
+- Identify weak areas
 - Exportable reports
 
 ---
 
 ### 17. Browser Lockdown & Anti-cheat
 
-- Full-screen enforced during test  
-- Detect tab switching → flag or auto-submit  
+- Full-screen enforced during test
+- Detect tab switching → flag or auto-submit
 - No webcam / offline capture in v1
 
 ---
 
 ### 18. Design Principles & UX Guidelines
 
-- Clean, responsive UI (**Vue.js + TailwindCSS**)  
-- Timer visible at top during tests  
-- Clear rendering of question text + images + LaTeX  
+- Clean, responsive UI (**Vue.js + TailwindCSS**)
+- Timer visible at top during tests
+- Clear rendering of question text + images + LaTeX
 - Accessible color schemes, keyboard navigation
 
 ---
 
 ### 19. MVP Deliverables
 
-- ✅ Multi-tenant structure  
-- 🧪 Pre-built test flow with timers & scoring  
-- 🧠 Practice mode + discussion threads  
-- 📊 Per-question analytics  
-- 📝 PDF generation for papers & solutions  
+- ✅ Multi-tenant structure
+- 🧪 Pre-built test flow with timers & scoring
+- 🧠 Practice mode + discussion threads
+- 📊 Per-question analytics
+- 📝 PDF generation for papers & solutions
 - 🔐 Google OAuth + Email auth
 
 ---
 
 ### 20. Phase 2 and Advanced Features
 
-- 🤖 AI-based difficulty estimation  
-- 🧭 Adaptive test generation  
-- 📱 Mobile app (iOS/Android)  
-- 💳 Subscription & payment features  
+- 🤖 AI-based difficulty estimation
+- 🧭 Adaptive test generation
+- 📱 Mobile app (iOS/Android)
+- 💳 Subscription & payment features
 - 📈 Advanced analytics dashboards
 
 ---
 
 ### 21. Success Metrics (KPIs)
 
-- MAU/DAU (students logging in)  
-- Test completion rate  
-- Average score improvement  
-- Active practice attempts  
+- MAU/DAU (students logging in)
+- Test completion rate
+- Average score improvement
+- Active practice attempts
 - PDF download counts
 
 ---
 
 ### 22. Monetization Strategy (Future)
 
-- Freemium model with subscription tiers  
+- Freemium model with subscription tiers
 - Coupons, promo codes, referral system
 
 ---
 
 ### 23. Competitive Landscape
 
-- Major players: Byju’s, Unacademy, Vedantu  
+- Major players: Byju’s, Unacademy, Vedantu
 - **Differentiation:** Multi-tenant, deep analytics, lightweight web-first, exam-specific
 
 ---
 
 ### 24. Risks & Assumptions
 
-- ⚠️ **Risk:** Student engagement may be low without adaptive tests  
-- 💭 **Assumption:** Users have stable internet access  
+- ⚠️ **Risk:** Student engagement may be low without adaptive tests
+- 💭 **Assumption:** Users have stable internet access
 - 🛠 **Mitigation:** Focus on practice + PDF solutions
 
 ---
 
 ### 25. Future Vision
 
-- 🤖 AI-powered question recommendation  
-- 🧭 Adaptive learning paths  
-- 🏫 Integration with institutional dashboards  
+- 🤖 AI-powered question recommendation
+- 🧭 Adaptive learning paths
+- 🏫 Integration with institutional dashboards
 - 📱 Mobile apps and offline support
 
 ---
@@ -334,12 +334,12 @@ Current solutions either emphasize content consumption or live classes but do no
 
 ### 26. Technical Overview
 
-- **Backend:** FastAPI (async)  
-- **Database:** PostgreSQL 15+ (multi-tenant aware)  
-- **ORM:** SQLAlchemy + Pydantic models  
-- **Frontend:** Vue.js 3 + TailwindCSS + Vite  
-- **Caching & Queue:** Redis  
-- **Storage:** AWS S3 for media & PDFs  
+- **Backend:** FastAPI (async)
+- **Database:** PostgreSQL 15+ (multi-tenant aware)
+- **ORM:** SQLAlchemy + Pydantic models
+- **Frontend:** Vue.js 3 + TailwindCSS + Vite
+- **Caching & Queue:** Redis
+- **Storage:** AWS S3 for media & PDFs
 - **Deployment:** Dockerized microservices, AWS ECS/EC2
 
 ---
@@ -350,198 +350,198 @@ Current solutions either emphasize content consumption or live classes but do no
 
 ### 28. Technology Stack
 
-- **Backend:** Python 3.12+, FastAPI, SQLAlchemy 2.0  
-- **Frontend:** Vue.js 3, TailwindCSS, Axios, Vite  
-- **DB:** PostgreSQL 15+, Alembic migrations  
-- **Caching/Queue:** Redis, RQ or Celery  
-- **File storage:** AWS S3  
-- **Auth:** OAuth2 (Google), JWT  
-- **Containerization:** Docker + Docker Compose  
+- **Backend:** Python 3.12+, FastAPI, SQLAlchemy 2.0
+- **Frontend:** Vue.js 3, TailwindCSS, Axios, Vite
+- **DB:** PostgreSQL 15+, Alembic migrations
+- **Caching/Queue:** Redis, RQ or Celery
+- **File storage:** AWS S3
+- **Auth:** OAuth2 (Google), JWT
+- **Containerization:** Docker + Docker Compose
 - **Deployment:** AWS ECS / EC2, Nginx reverse proxy
 
 ---
 
 ### 29. Service Definitions
 
-- **Auth Service:** User management, OAuth, JWT, multi-tenancy  
-- **Organization Service:** Exam/organization CRUD, subjects, topics  
-- **Question Service:** CRUD questions, media, comments, reporting  
-- **Test Service:** Pre-built tests, timed attempts, scoring  
-- **Analytics Service:** Per-question, per-student stats, exportable  
+- **Auth Service:** User management, OAuth, JWT, multi-tenancy
+- **Organization Service:** Exam/organization CRUD, subjects, topics
+- **Question Service:** CRUD questions, media, comments, reporting
+- **Test Service:** Pre-built tests, timed attempts, scoring
+- **Analytics Service:** Per-question, per-student stats, exportable
 - **File Service:** PDF generation, image uploads
 
 ---
 
 ### 30. Database Design (Key Tables)
 
-- `organizations`, `users`, `subjects`, `topics`, `questions`, `options`, `tests`, `test_questions`, `attempts`, `attempt_answers`  
-- Multi-tenant-aware schema  
+- `organizations`, `users`, `subjects`, `topics`, `questions`, `options`, `tests`, `test_questions`, `attempts`, `attempt_answers`
+- Multi-tenant-aware schema
 - JSONB columns for flexible question options and test structures
 
 ---
 
 ### 31. API Design (REST)
 
-- `/auth/*`, `/organizations/*`, `/questions/*`, `/tests/*`, `/attempts/*`, `/analytics/*`  
-- JWT token validation, role-based access  
+- `/auth/*`, `/organizations/*`, `/questions/*`, `/tests/*`, `/attempts/*`, `/analytics/*`
+- JWT token validation, role-based access
 - Rate-limiting and input validation
 
 ---
 
 ### 32. Authentication & Authorization
 
-- JWT tokens (short-lived access + refresh)  
-- Google OAuth 2.0 integration  
-- Role-based access: student, admin (future)  
+- JWT tokens (short-lived access + refresh)
+- Google OAuth 2.0 integration
+- Role-based access: student, admin (future)
 - Email verification flow
 
 ---
 
 ### 33. Multi-tenancy Implementation
 
-- Organization ID in all tables  
-- Scoped queries per organization  
+- Organization ID in all tables
+- Scoped queries per organization
 - Tenant-aware caching and analytics
 
 ---
 
 ### 34. File Storage & Media Management
 
-- AWS S3 for images & PDFs  
-- Signed URLs for secure access  
+- AWS S3 for images & PDFs
+- Signed URLs for secure access
 - Background task for PDF generation
 
 ---
 
 ### 35. PDF Generation Service
 
-- ReportLab / WeasyPrint for PDFs  
-- Generates question papers, answer keys, solutions  
+- ReportLab / WeasyPrint for PDFs
+- Generates question papers, answer keys, solutions
 - Stored in S3 and accessible via signed URL
 
 ---
 
 ### 36. Real-time Exam Timers & Enforcement
 
-- Client-side timer with autosave  
-- Backend enforcement via timestamp comparison  
+- Client-side timer with autosave
+- Backend enforcement via timestamp comparison
 - Auto-submit on expiry or anti-cheat event
 
 ---
 
 ### 37. Anti-cheat Browser Enforcement
 
-- Fullscreen mode enforced  
-- Detect tab switching → flag or auto-submit  
+- Fullscreen mode enforced
+- Detect tab switching → flag or auto-submit
 - Event logs stored for auditing
 
 ---
 
 ### 38. Caching & Performance
 
-- Redis for session cache, frequently accessed questions, leaderboard/analytics cache  
+- Redis for session cache, frequently accessed questions, leaderboard/analytics cache
 - Async DB queries in FastAPI
 
 ---
 
 ### 39. Logging, Monitoring & Error Tracking
 
-- Centralized logging via CloudWatch or ELK  
-- Error tracking via Sentry or Rollbar  
+- Centralized logging via CloudWatch or ELK
+- Error tracking via Sentry or Rollbar
 - Performance metrics monitored via Prometheus + Grafana
 
 ---
 
 ### 40. Deployment Architecture
 
-- Dockerized microservices  
-- AWS ECS or EC2 + Nginx reverse proxy  
-- Environment separation: Dev → Staging → Production  
+- Dockerized microservices
+- AWS ECS or EC2 + Nginx reverse proxy
+- Environment separation: Dev → Staging → Production
 - CI/CD via GitHub Actions
 
 ---
 
 ### 41. CI/CD Pipeline
 
-- Unit + integration tests → build → push docker image → deploy  
-- Automated DB migrations via Alembic  
+- Unit + integration tests → build → push docker image → deploy
+- Automated DB migrations via Alembic
 - Deployment scripts for ECS
 
 ---
 
 ### 42. Security Framework
 
-- Input validation, XSS/SQL injection prevention  
-- HTTPS enforced via SSL (ACM or Let’s Encrypt)  
-- JWT with secure cookies  
+- Input validation, XSS/SQL injection prevention
+- HTTPS enforced via SSL (ACM or Let’s Encrypt)
+- JWT with secure cookies
 - Role-based access control
 
 ---
 
 ### 43. Scalability & Load Handling
 
-- Microservices allow horizontal scaling per domain  
-- Redis caching for high concurrency  
+- Microservices allow horizontal scaling per domain
+- Redis caching for high concurrency
 - Async FastAPI handles 1000+ concurrent users
 
 ---
 
 ### 44. Backup & Disaster Recovery
 
-- Daily DB backups (Postgres RDS snapshots)  
-- S3 versioning for media/PDFs  
+- Daily DB backups (Postgres RDS snapshots)
+- S3 versioning for media/PDFs
 - Recovery plan tested quarterly
 
 ---
 
 ### 45. Testing Strategy
 
-- Unit tests: Pytest  
-- Integration tests for services  
-- Load testing for exam concurrency  
+- Unit tests: Pytest
+- Integration tests for services
+- Load testing for exam concurrency
 - End-to-end test automation
 
 ---
 
 ### 46. Analytics & Telemetry
 
-- Per-question, per-student analytics stored in PostgreSQL + Redis cache  
-- Exportable CSV/PDF reports  
+- Per-question, per-student analytics stored in PostgreSQL + Redis cache
+- Exportable CSV/PDF reports
 - Event logging for insights
 
 ---
 
 ### 47. Environment Configuration
 
-- `.env` files for secret keys  
-- Separate Dev / Stage / Prod configurations  
+- `.env` files for secret keys
+- Separate Dev / Stage / Prod configurations
 - AWS IAM roles for access control
 
 ---
 
 ### 48. Development Milestones & Sprints
 
-- **Sprint 1:** Auth + Organization + DB setup  
-- **Sprint 2:** Question CRUD + Test CRUD  
-- **Sprint 3:** Test attempt flow + client timer + browser lockdown  
-- **Sprint 4:** Practice mode + comment/report features  
-- **Sprint 5:** Analytics + PDF generation + caching  
+- **Sprint 1:** Auth + Organization + DB setup
+- **Sprint 2:** Question CRUD + Test CRUD
+- **Sprint 3:** Test attempt flow + client timer + browser lockdown
+- **Sprint 4:** Practice mode + comment/report features
+- **Sprint 5:** Analytics + PDF generation + caching
 - **Sprint 6:** Final QA + Deployment + Monitoring
 
 ---
 
 ### 49. Future Technical Extensions
 
-- 🤖 AI-powered difficulty estimation and analytics  
-- 🧭 Adaptive test engine  
-- 🧠 Recommendation engine for practice questions  
+- 🤖 AI-powered difficulty estimation and analytics
+- 🧭 Adaptive test engine
+- 🧠 Recommendation engine for practice questions
 - 📱 Mobile app integration
 
 ---
 
 ### 50. Final Summary & Evolution Path
 
-Vichintarka combines **philosophical depth** with **modern engineering**, delivering a **scalable**, **secure**, **multi-tenant** exam preparation platform.  
+Vichintarka combines **philosophical depth** with **modern engineering**, delivering a **scalable**, **secure**, **multi-tenant** exam preparation platform.
 
 Its architecture ensures modular expansion, high performance, and analytic insights, positioning it as a robust foundation for future **AI-powered educational innovations**. 🚀
 

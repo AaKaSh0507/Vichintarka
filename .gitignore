@@ -326,3 +326,39 @@ dump.rdb
 
 # Kubernetes (if used)
 *.kubeconfig
+
+# Docker specific
+docker-compose.override.yml
+
+# FastAPI specific
+.pytest_cache/
+htmlcov/
+.coverage
+coverage.xml
+.coverage.*
+
+# Pre-commit
+.pre-commit-config.yaml.bak
+
+# Local development files
+.env.local
+.env.development
+
+# VS Code workspace settings (keep .vscode/ folder ignored but allow specific shared settings if needed)
+.vscode/settings.json
+.vscode/launch.json
+.vscode/tasks.json
+.vscode/*.json
+
+# macOS
+.DS_Store
+
+# SQLite databases (for local testing)
+*.sqlite3
+*.db
+
+# Poetry (if used instead of pip)
+poetry.lock
+
+# uvicorn pid files
+*.pid

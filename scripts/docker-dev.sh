@@ -5,7 +5,7 @@
 
 set -e
 
-PROJECT_NAME="vichintarka"
+export PROJECT_NAME="vichintarka"
 
 # Colors for output
 RED='\033[0;31m'
